@@ -34,7 +34,7 @@
 
 - [ ] 수익률을 계산한다
 
-- [ ] 당첨번호를 가진  enum(`WINNINGNUMBER`)이 있다
+- [ ] 당첨번호를 가진  enum(`WIN_NUMBER`)이 있다
 
 
 

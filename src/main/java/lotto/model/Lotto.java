@@ -6,7 +6,6 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class Lotto {
     private final List<Integer> numbers;
@@ -16,6 +15,9 @@ public class Lotto {
         this.numbers = numbers;
     }
 
+    public List<Integer> getNumbers() {
+        return Collections.unmodifiableList(numbers);
+    }
     public static Lotto makeRandomLotto() {
         List<Integer> numbers = Randoms.pickUniqueNumbersInRange(1, 45, 6);
         Collections.sort(numbers);
