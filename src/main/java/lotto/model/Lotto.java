@@ -2,10 +2,7 @@ package lotto.model;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Lotto {
     private final List<Integer> numbers;
@@ -19,7 +16,9 @@ public class Lotto {
         return Collections.unmodifiableList(numbers);
     }
     public static Lotto makeRandomLotto() {
-        List<Integer> numbers = Randoms.pickUniqueNumbersInRange(1, 45, 6);
+        List<Integer> createdNumbers = Randoms.pickUniqueNumbersInRange(1, 45, 6);
+        List<Integer> numbers = new ArrayList<>(createdNumbers);
+
         Collections.sort(numbers);
 
         return new Lotto(numbers);
