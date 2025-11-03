@@ -24,7 +24,7 @@ public class Input {
     public Lotto inputNumbers() {
         while(true) {
             try {
-                System.out.println("당첨 번호를 입력해 주세요.");
+                System.out.println("\n당첨 번호를 입력해 주세요.");
                 String numbers = Console.readLine();
 
                 return InputParser.parseLotto(numbers);
@@ -39,7 +39,7 @@ public class Input {
     public int inputBonusNumber() {
         while(true) {
             try {
-                System.out.println("보너스 번호를 입력해 주세요.");
+                System.out.println("\n보너스 번호를 입력해 주세요.");
                 String bonusNumber = Console.readLine();
 
                 return Integer.parseInt(bonusNumber);

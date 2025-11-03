@@ -25,8 +25,15 @@ public class Lotto {
         return new Lotto(numbers);
     }
 
+    public Rank calculateRank(WinningLotto winningLotto) {
+        int matchCount = (int) this.numbers.stream()
+                .filter(winningLotto.getWinningNumbers().getNumbers()::contains)
+                .count();
 
+        boolean bonusMatch = this.numbers.contains(winningLotto.getBonusNumber());
 
+        return Rank.valueOf(matchCount, bonusMatch);
+    }
 
 
     private void validate(List<Integer> numbers) {
@@ -41,7 +48,7 @@ public class Lotto {
 
         for (int number : numbers) {
             if (number < 1 || number > 45) {
-                throw new IllegalArgumentException("[ERROR] 로또 번호는 1 이상 45 미만이어야 합니다.");
+                throw new IllegalArgumentException("[ERROR] 로또 번호는 1 이상 45 이하이어야 합니다.");
             }
         }
     }
