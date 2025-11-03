@@ -43,7 +43,7 @@ public class InputParser {
         try {
             int BonusNumber = Integer.parseInt(input);
             if (BonusNumber < 1 || BonusNumber > 45) {
-                throw new IllegalArgumentException("[ERROR] 보너스 번호는 1부터 45 사이의 숫자여야 합니다.")
+                throw new IllegalArgumentException("[ERROR] 보너스 번호는 1부터 45 사이의 숫자여야 합니다.");
             }
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("[ERROR] 잘못된 형식의 입력입니다.");
